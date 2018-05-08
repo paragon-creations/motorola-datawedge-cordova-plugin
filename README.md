@@ -15,12 +15,14 @@ This plugin is compatible with plugman.  To install, run the following from your
 Create a custom profile associated to your app, and send a "startActivity" intent.  This must use the default plugin action: _"com.bluefletch.motorola.datawedge.ACTION"_ and EMPTY category.
 
 The DataWedge User Guide is located here: `https://launchpad.motorolasolutions.com/documents/dw_user_guide.html`
+
 Intent configuration: `https://launchpad.motorolasolutions.com/documents/dw_user_guide.html#_intent_output`
 
 1. You'll need to first create a Profile in your DataWedge Application to run **startActivity** for an intent on scan/magstripe events as applicable.
-2. You MUST set the action to: _"com.bluefletch.motorola.datawedge.ACTION"_ and category to EMPTY/BLANK
-3. Associate your app to the DataWedge profile so it loads with your app. Configure this under `(Your profile) > Associated apps > New app/activity (menu button) > (Select your app)`
-4. Lastly, you need to set your application to be "singleTop" in Cordova.  This will make sure each scan doesn't launch a new instance of your app. Add the following to your config.xml: 
+2. You MUST set the action to: _"com.bluefletch.motorola.datawedge.ACTION"_
+3. Leave the "category name" blank.
+4. Associate your app to the DataWedge profile so it loads with your app. Configure this under `(Your profile) > Associated apps > New app/activity (menu button) > (Select your app)`. Note: If you get several options after selecting the app - choose the first one (which is marked with "*").
+5. Lastly, you need to set your application to be "singleTop" in Cordova.  This will make sure each scan doesn't launch a new instance of your app. Add the following to your config.xml: 
 ```<preference name="AndroidLaunchMode" value="singleTop" />```
 
 <h3>To Use:</h3>
